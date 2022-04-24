@@ -39,6 +39,8 @@ dependencies {
 
     implementation 'org.springframework.session:spring-session-jdbc'
 
+    implementation 'org.mariadb.jdbc:mariadb-java-client'
+
 //    testImplementation 'junit:junit:4.12'
     testImplementation("org.junit.vintage:junit-vintage-engine") {
         exclude group: "org.hamcrest", module: "hamcrest-core"
