@@ -1,7 +1,7 @@
 buildscript {
 
     ext { // 전역변수를 설정
-        springBootVersion = '2.1.7.RELEASE'
+        springBootVersion = '2.2.0.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -39,7 +39,12 @@ dependencies {
 
     implementation 'org.springframework.session:spring-session-jdbc'
 
-    testCompileOnly('org.springframework.boot:spring-boot-starter-test')
+//    testImplementation 'junit:junit:4.12'
+    testImplementation("org.junit.vintage:junit-vintage-engine") {
+        exclude group: "org.hamcrest", module: "hamcrest-core"
+    }
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.security:spring-security-test')
 
 }
